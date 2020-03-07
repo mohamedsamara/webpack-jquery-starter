@@ -7,6 +7,8 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const PreloadWebpackPlugin = require("preload-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const glob = require("glob");
 
@@ -27,8 +29,18 @@ const config = {
     ]
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
     new PreloadWebpackPlugin({
-      include: "initial"
+      include: "initial",
+      as(entry) {
+        // if (/\.css$/.test(entry)) return 'style';
+        // if (/\.woff$/.test(entry)) return 'font';
+        // if (/\.png$/.test(entry)) return 'image';
+        return "script";
+      }
     }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
@@ -51,11 +63,30 @@ module.exports = (env, argv) => {
   if (argv.mode === "development") {
     config.devtool = "eval";
     config.output.filename = "[name].js";
+
+    config.module.rules.push({
+      test: /\.(scss|sass|css)$/,
+      use: ["style-loader", "css-loader", "sass-loader"]
+    });
   }
 
   if (argv.mode === "production") {
     config.devtool = "source-map";
     config.output.filename = `${commonPaths.jsFolder}/[name].[hash].js`;
+
+    config.module.rules.push({
+      test: /\.(scss|sass|css)$/,
+      use: [
+        {
+          loader: MiniCssExtractPlugin.loader,
+          options: {
+            hmr: true
+          }
+        },
+        "css-loader",
+        "sass-loader"
+      ]
+    });
 
     config.optimization = {
       runtimeChunk: "single",
@@ -63,12 +94,12 @@ module.exports = (env, argv) => {
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/,
-            chunks: "async",
+            chunks: "initial",
             name: "vendor"
           }
         }
       },
-      minimizer: [new TerserPlugin()]
+      minimizer: [new TerserPlugin(), new OptimizeCSSAssetsPlugin({})]
     };
   }
 
