@@ -4,6 +4,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const PreloadWebpackPlugin = require("preload-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
@@ -26,6 +27,9 @@ const config = {
     ]
   },
   plugins: [
+    new PreloadWebpackPlugin({
+      include: "initial"
+    }),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
       {
@@ -52,16 +56,15 @@ module.exports = (env, argv) => {
   if (argv.mode === "production") {
     config.devtool = "source-map";
     config.output.filename = `${commonPaths.jsFolder}/[name].[hash].js`;
+
     config.optimization = {
       runtimeChunk: "single",
       splitChunks: {
         cacheGroups: {
           vendor: {
             test: /[\\/]node_modules[\\/]/,
-            chunks: "initial",
-            name: "vendor",
-            priority: 10,
-            enforce: true
+            chunks: "async",
+            name: "vendor"
           }
         }
       },
