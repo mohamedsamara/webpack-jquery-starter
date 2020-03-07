@@ -25,7 +25,7 @@ $ npm start
 ## Run the application for production
 
 ```
-$ npm run production
+$ npm run build
 
 ```
 
