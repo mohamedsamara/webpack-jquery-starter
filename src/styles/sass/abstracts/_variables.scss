@@ -6,9 +6,14 @@ $theme-purple: #727cb6;
 $theme-red: #c20030;
 $theme-white: #f6f7f8;
 $theme-black: #323232;
+$theme-light-black: #2f353a;
 $theme-orange: #e4853f;
 $theme-yellow: #ffdd57;
 $theme-pink: #ff3860;
+$theme-light-blue: #4a68aa;
+
+$theme-primary: #1565c0;
+$theme-secondary: #bbdefb;
 
 // standard colors
 $blue: #20a8d8;
@@ -25,9 +30,16 @@ $teal: #20c997 !default;
 $cyan: #67c2ef;
 $black: #000;
 
-$font-family-arabic: "Reem Kufi", sans-serif;
-$font-family-heading: "Roboto", sans-serif;
-$font-family-body: "Roboto", sans-serif;
+$breakpoints: (
+  'small': 320px,
+  'medium': 768px,
+  'large': 1024px,
+) !default;
+
+$font-stack: 'Roboto Slab', sans-serif;
+
+$font-family-heading: $font-stack;
+$font-family-body: $font-stack;
 $font-size-x-small: 12px;
 $font-size-small: 13px;
 $font-size-medium: 14px;
@@ -36,13 +48,15 @@ $font-size-x-large: 16px;
 $font-size-huge: 20px;
 $font-size-heading-small: 16px;
 $font-size-heading-medium: 18px;
+$font-size-heading-large: 20px;
+$font-size-heading-x-large: 24px;
 $font-weight-normal: normal;
 $font-weight-bold-light: 600;
 $font-weight-bold: 700;
 
 // layout variables
-$btn-bg: #0b2f4e;
-$btn-bg-hover: #145086;
+$btn-bg: $white;
+$btn-bg-hover: $red;
 $font-color: #808081;
 $font-hover-color: #a8a8a8;
 $focus-font-color: #262626;
@@ -53,7 +67,7 @@ $separator-color: #e6e5ea;
 $dark-overflow-bg: #0006;
 $transparent-bg: #0006;
 
-$box-shadow: 0 0 10px 0 #e6e5ea;
+$box-shadow: 0 0 9px 0 $theme-white;
 $border-radius-default: 3px;
 $line-height: 1.5;
 $letter-spacing: 0.5px;
@@ -62,8 +76,8 @@ $layout-max-width: 1200px;
 $layout-transition-speed: 0.3s !default;
 
 // icons
-$twitter: url("/images/social_icons/twitter.png");
-$pinterest: url("/images/social_icons/pinterest.png");
-$instagram: url("/images/social_icons/instagram.png");
-$facebook: url("/images/social_icons/facebook.png");
-$google: url("/images/social_icons/google.png");
+$twitter: url('/images/social_icons/twitter.png');
+$pinterest: url('/images/social_icons/pinterest.png');
+$instagram: url('/images/social_icons/instagram.png');
+$facebook: url('/images/social_icons/facebook.png');
+$google: url('/images/social_icons/google.png');

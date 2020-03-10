@@ -30,8 +30,6 @@ const config = {
       include: "initial",
       as(entry) {
         // if (/\.css$/.test(entry)) return 'style';
-        // if (/\.woff$/.test(entry)) return 'font';
-        // if (/\.png$/.test(entry)) return 'image';
         return "script";
       }
     }),
@@ -45,7 +43,7 @@ const config = {
   ]
 };
 
-const files = glob.sync("./src/*.html");
+const files = glob.sync("./src/html/*.html");
 files.forEach(file => {
   config.plugins.push(
     new HtmlWebPackPlugin({

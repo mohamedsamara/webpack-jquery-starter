@@ -1,8 +1,27 @@
-// Import Bootstrap
-@import "node_modules/bootstrap/scss/bootstrap";
+// Abstracts
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
 
-// Import core styles
-@import "core/core";
+// Vendors
+@import "vendors/bootstrap";
+@import "vendors/fontawesome";
 
-// Import custom styles
-@import "custom";
+// Base
+@import "base/base";
+@import "base/fonts";
+@import "base/typography";
+@import "base/utils";
+
+// Layout
+@import "layout/header";
+@import "layout/footer";
+
+// Components
+@import "components/button";
+
+// Pages
+@import "pages/homepage";
+
+// Themes
+@import "themes/default";
