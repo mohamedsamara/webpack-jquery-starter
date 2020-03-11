@@ -1,0 +1,21 @@
+{
+  "extends": ["eslint:recommended"],
+  "globals": {
+    "chrome": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jquery": true
+  },
+  "plugins": ["jquery", "babel"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": "warn",
+    "indent": ["warn", 2]
+  }
+}

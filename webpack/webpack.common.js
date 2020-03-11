@@ -14,6 +14,15 @@ const config = {
   module: {
     rules: [
       {
+        enforce: "pre",
+        test: /\.(js)$/,
+        loader: "eslint-loader",
+        exclude: /node_modules/,
+        options: {
+          emitWarning: process.env.NODE_ENV !== "production"
+        }
+      },
+      {
         test: /\.(js)$/,
         exclude: /node_modules/,
         loader: "babel-loader"
@@ -29,7 +38,7 @@ const config = {
       excludeHtmlNames: ["header.html"],
       include: "initial",
       as(entry) {
-        // if (/\.css$/.test(entry)) return 'style';
+        if (/\.css$/.test(entry)) return "style";
         return "script";
       }
     }),

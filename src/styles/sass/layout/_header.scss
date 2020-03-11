@@ -1,7 +1,42 @@
-.social-part .fa {
-  padding-right: 20px;
-}
+.header {
+  .navbar-light {
+    .navbar-toggler {
+      border: none;
+      padding: 0;
+    }
+  }
 
-ul li a {
-  margin-right: 20px;
+  .social-part {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @include media-breakpoint-down(sm) {
+      margin: 10px 0px;
+      text-align: right;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0px 10px;
+      border: $border-default;
+
+      a {
+        padding: 1px 10px;
+        @include transition(all, $transition-speed);
+
+        &:hover {
+          background-color: $theme-primary;
+          @include transition(all, $transition-speed);
+          .social-icon {
+            color: $white;
+            @include transition(all, $transition-speed);
+          }
+        }
+
+        .social-icon {
+          @include transition(all, $transition-speed);
+        }
+      }
+    }
+  }
 }

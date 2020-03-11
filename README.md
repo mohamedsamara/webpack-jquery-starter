@@ -2,7 +2,7 @@
 
 ## Description
 
-This starter is simple and easy to use
+This is a basic webpack jQuery starter with Bootstrap, FontAwesome and Sass
 
 ## Install
 
@@ -15,20 +15,26 @@ $ npm install
 
 ```
 
-## Run the application for development
+## Start
 
 ```
 $ npm start
 
 ```
 
-## Run the application for production
+## Simple build for production
 
 ```
 $ npm run build
 
 ```
 
+## Run the application for production
+
+```
+$ npm run serve
+
+```
 
 ## Languages & tools
 
@@ -36,3 +42,10 @@ $ npm run build
 
 - [jQuery](https://jquery.com/)
 
+- [Sass](https://sass-lang.com/)
+
+- [FontAwesome](https://fontawesome.com/)
+
+- [PostCSS](https://postcss.org/)
+
+- [ESLint](https://eslint.org/)

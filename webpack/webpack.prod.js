@@ -25,6 +25,7 @@ const config = {
             loader: MiniCssExtractPlugin.loader
           },
           "css-loader",
+          "postcss-loader",
           "sass-loader"
         ]
       },
@@ -70,6 +71,7 @@ const config = {
             loader: "file-loader",
             options: {
               outputPath: "fonts",
+              publicPath: "../fonts",
               name: "[name].[hash].[ext]"
             }
           }
@@ -77,7 +79,13 @@ const config = {
       }
     ]
   },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   optimization: {
+    minimize: true,
     runtimeChunk: "single",
     splitChunks: {
       cacheGroups: {

@@ -4,14 +4,14 @@ export function navigation() {
       $(this)
         .find(".sm-menu")
         .first()
-        .stop(true, true)
+        .stop(true)
         .slideDown(150);
     },
     function() {
       $(this)
         .find(".sm-menu")
         .first()
-        .stop(true, true)
+        .stop(true)
         .slideUp(105);
     }
   );

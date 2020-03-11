@@ -1,5 +1,6 @@
 // Theme colors
 $theme-green: #00acac;
+$theme-light-green: #289772;
 $theme-gray: #f1f1f1;
 $theme-blue: #145086;
 $theme-purple: #727cb6;
@@ -13,7 +14,7 @@ $theme-pink: #ff3860;
 $theme-light-blue: #4a68aa;
 
 $theme-primary: #1565c0;
-$theme-secondary: #bbdefb;
+$theme-secondary: #2c3c42;
 
 // standard colors
 $blue: #20a8d8;
@@ -31,12 +32,12 @@ $cyan: #67c2ef;
 $black: #000;
 
 $breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
+  "small": 320px,
+  "medium": 768px,
+  "large": 1024px
 ) !default;
 
-$font-stack: 'Roboto Slab', sans-serif;
+$font-stack: "Roboto Slab", sans-serif;
 
 $font-family-heading: $font-stack;
 $font-family-body: $font-stack;
@@ -73,11 +74,7 @@ $line-height: 1.5;
 $letter-spacing: 0.5px;
 $border-default: 1px solid $border-color;
 $layout-max-width: 1200px;
-$layout-transition-speed: 0.3s !default;
+$transition-speed: 0.3s !default;
 
 // icons
-$twitter: url('/images/social_icons/twitter.png');
-$pinterest: url('/images/social_icons/pinterest.png');
-$instagram: url('/images/social_icons/instagram.png');
-$facebook: url('/images/social_icons/facebook.png');
-$google: url('/images/social_icons/google.png');
+$main-bg: url("/images/main-background.jpg");

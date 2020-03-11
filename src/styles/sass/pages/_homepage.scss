@@ -1,0 +1,25 @@
+.homepage {
+  .intro {
+    color: $white;
+
+    p {
+      background: $dark-overflow-bg;
+      padding: 10px;
+      border-radius: 25px;
+
+      strong {
+        &:nth-child(1) {
+          color: $theme-red;
+        }
+
+        &:nth-child(2) {
+          color: $theme-light-blue;
+        }
+
+        &:nth-child(3) {
+          color: $theme-light-green;
+        }
+      }
+    }
+  }
+}

@@ -14,7 +14,7 @@ const config = {
     filename: "[name].js",
     path: build
   },
-  devtool: "eval",
+  devtool: "eval-cheap-module-source-map",
   module: {
     rules: [
       {
@@ -23,6 +23,12 @@ const config = {
           "style-loader",
           {
             loader: "css-loader",
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: "postcss-loader",
             options: {
               sourceMap: true
             }
@@ -43,29 +49,6 @@ const config = {
             options: {
               outputPath: "images",
               name: "[name].[ext]"
-            }
-          },
-          {
-            loader: "image-webpack-loader",
-            options: {
-              mozjpeg: {
-                // enabled: false,
-                progressive: true,
-                quality: 65
-              },
-              gifsicle: {
-                interlaced: false
-              },
-              optipng: {
-                optimizationLevel: 7
-              },
-              pngquant: {
-                quality: "65-90",
-                speed: 4
-              },
-              webp: {
-                quality: 75
-              }
             }
           }
         ]

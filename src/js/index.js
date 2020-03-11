@@ -8,9 +8,7 @@ import "../styles/sass/style.scss";
 import "../styles/css/style.css";
 
 import { navigation } from "./navigation";
-import { subheader } from "./subheader";
 
 $(document).ready(function() {
   navigation();
-  subheader();
 });
