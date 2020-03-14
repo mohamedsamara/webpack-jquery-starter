@@ -4,7 +4,6 @@
 const path = require("path");
 const glob = require("glob");
 const webpack = require("webpack");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const PreloadWebpackPlugin = require("preload-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
@@ -29,6 +28,11 @@ const config = {
       }
     ]
   },
+  resolve: {
+    alias: {
+      images: path.resolve(__dirname, "../", "src/public/images")
+    }
+  },
   plugins: [
     new webpack.ProvidePlugin({
       $: "jquery",
@@ -43,11 +47,6 @@ const config = {
       }
     }),
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([
-      {
-        from: "src/public"
-      }
-    ]),
     new webpack.HashedModuleIdsPlugin()
   ]
 };

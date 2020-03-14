@@ -6,6 +6,32 @@
     }
   }
 
+  .navbar-nav {
+    @include media-breakpoint-up(sm) {
+      margin-top: 0 !important;
+    }
+
+    @include media-breakpoint-down(xs) {
+      .dropdown-menu {
+        border: none;
+      }
+    }
+
+    .dropdown-item {
+      color: $font-color;
+    }
+
+    .nav-link.dropdown-toggle {
+      &:after {
+        content: "\f078";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        border: none;
+        vertical-align: middle;
+      }
+    }
+  }
+
   .social-part {
     list-style: none;
     padding: 0;
@@ -19,21 +45,33 @@
       display: inline-block;
       margin: 0px 10px;
       border: $border-default;
+      @include transition(all, $transition-speed);
+
+      &:hover {
+        @include transition(all, $transition-speed);
+        @include translate(0, -2.5px);
+      }
+
+      .fa-facebook-f {
+        background-color: $facebook-color;
+      }
+
+      .fa-twitter {
+        background-color: $twitter-color;
+      }
+
+      .fa-instagram {
+        background-color: $instagram-color;
+      }
 
       a {
-        padding: 1px 10px;
+        color: $white;
+        padding: 10px 15px;
+        text-decoration: none;
         @include transition(all, $transition-speed);
 
         &:hover {
-          background-color: $theme-primary;
-          @include transition(all, $transition-speed);
-          .social-icon {
-            color: $white;
-            @include transition(all, $transition-speed);
-          }
-        }
-
-        .social-icon {
+          opacity: 0.8;
           @include transition(all, $transition-speed);
         }
       }

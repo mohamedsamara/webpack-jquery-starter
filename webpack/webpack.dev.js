@@ -3,16 +3,15 @@
 
 const webpackMerge = require("webpack-merge");
 const path = require("path");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const common = require("./webpack.common");
-
-const build = path.resolve(__dirname, "../", "build");
 
 const config = {
   mode: "development",
   output: {
     filename: "[name].js",
-    path: build
+    path: path.resolve(__dirname, "../", "build")
   },
   devtool: "eval-cheap-module-source-map",
   module: {
@@ -67,10 +66,17 @@ const config = {
       }
     ]
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: "src/public"
+      }
+    ])
+  ],
   devServer: {
     historyApiFallback: true,
     disableHostCheck: false,
-    contentBase: build,
+    contentBase: path.resolve(__dirname, "../", "build"),
     inline: true,
     compress: true,
     hot: true

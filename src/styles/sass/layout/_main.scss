@@ -1,5 +1,11 @@
 .main {
   padding-top: 20px;
   background: $transparent-bg;
-  height: 100%;
+  flex: 1 0;
+}
+
+.page-title {
+  color: $white;
+  text-decoration: underline;
+  text-underline-position: under;
 }

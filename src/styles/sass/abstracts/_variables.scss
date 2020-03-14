@@ -31,16 +31,21 @@ $teal: #20c997 !default;
 $cyan: #67c2ef;
 $black: #000;
 
+$twitter-color: #55acee;
+$facebook-color: #3b5998;
+$instagram-color: #dd4b39;
+
 $breakpoints: (
   "small": 320px,
   "medium": 768px,
   "large": 1024px
 ) !default;
 
-$font-stack: "Roboto Slab", sans-serif;
+$font-stack-heading: "Oswald", sans-serif;
+$font-stack-body: "Roboto", sans-serif;
 
-$font-family-heading: $font-stack;
-$font-family-body: $font-stack;
+$font-family-heading: $font-stack-heading;
+$font-family-body: $font-stack-body;
 $font-size-x-small: 12px;
 $font-size-small: 13px;
 $font-size-medium: 14px;
@@ -76,5 +81,5 @@ $border-default: 1px solid $border-color;
 $layout-max-width: 1200px;
 $transition-speed: 0.3s !default;
 
-// icons
-$main-bg: url("/images/main-background.jpg");
+// icons & images
+$main-bg: url("~images/main-background.jpg");

@@ -1,6 +1,12 @@
+::selection {
+  background-color: $indigo;
+  color: $white;
+}
+
 html,
 body {
-  height: 100vh;
+  min-height: 100vh;
+  overflow: auto;
 }
 
 html {
@@ -23,6 +29,8 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  @include flex();
+  flex-direction: column;
 }
 
 a {
@@ -31,7 +39,7 @@ a {
 }
 
 a:hover {
-  color: $theme-primary !important;
+  color: $theme-primary;
 }
 
 header {

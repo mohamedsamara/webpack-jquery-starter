@@ -22,11 +22,32 @@ const config = {
         test: /\.(scss|sass|css)$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: "../"
+            }
           },
-          "css-loader",
-          "postcss-loader",
-          "sass-loader"
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: "resolve-url-loader"
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true
+            }
+          }
         ]
       },
       {
@@ -43,9 +64,18 @@ const config = {
             loader: "image-webpack-loader",
             options: {
               mozjpeg: {
-                // enabled: false,
                 progressive: true,
                 quality: 65
+              },
+              svgo: {
+                plugins: [
+                  {
+                    removeViewBox: false
+                  },
+                  {
+                    removeEmptyAttrs: false
+                  }
+                ]
               },
               gifsicle: {
                 interlaced: false

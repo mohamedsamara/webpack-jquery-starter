@@ -8,6 +8,8 @@
     "serve": "serve build",
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --mode=development --open --config webpack/webpack.dev.js",
     "start": "npm run dev",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "lint": "eslint src/js/*.js --ignore-path .eslintignore",
     "lint:fix": "eslint src/js/*.js --fix --ignore-path .eslintignore",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,12 +18,19 @@
     "type": "git",
     "url": "git+https://github.com/mohamedsamara/webpack-jquery-starter.git"
   },
+  "keywords": [
+    "webpack",
+    "jquery",
+    "bootstrap",
+    "fontawesome",
+    "sass"
+  ],
   "author": "Mohamed Samara (https://github.com/mohamedsamara)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mohamedsamara/webpack-jquery-starter/issues"
   },
-  "homepage": "https://github.com/mohamedsamara/webpack-jquery-starter#readme",
+  "homepage": "https://mohamedsamara.github.io/webpack-jquery-starter",
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
@@ -37,6 +46,7 @@
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-jquery": "^1.5.1",
     "file-loader": "^5.1.0",
+    "gh-pages": "^2.2.0",
     "glob": "^7.1.6",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^4.0.0-beta.2",

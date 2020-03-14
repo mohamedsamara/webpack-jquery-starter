@@ -1,4 +1,4 @@
-// Boostrap dependencies: jQuery is automatically loaded through ProvidePlugin webpack plugin
+// Boostrap dependencies: jQuery is automatically loaded through ProvidePlugin (webpack plugin)
 import "popper.js";
 
 // import "bootstrap";

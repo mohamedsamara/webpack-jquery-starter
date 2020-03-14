@@ -44,6 +44,8 @@ $ npm run serve
 
 - [Sass](https://sass-lang.com/)
 
+- [Bootstrap](https://getbootstrap.com/)
+
 - [FontAwesome](https://fontawesome.com/)
 
 - [PostCSS](https://postcss.org/)
