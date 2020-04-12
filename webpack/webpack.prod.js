@@ -2,6 +2,7 @@
 "use strict";
 
 const path = require("path");
+const webpack = require("webpack");
 const webpackMerge = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
@@ -12,8 +13,8 @@ const common = require("./webpack.common");
 const config = {
   mode: "production",
   output: {
-    filename: "js/[name].[contenthash].js",
-    path: path.resolve(__dirname, "../", "build")
+    path: path.resolve(__dirname, "../", "build"),
+    filename: "js/[name].[contenthash].js"
   },
   devtool: "source-map",
   module: {
@@ -132,7 +133,8 @@ const config = {
     new OptimizeCSSAssetsPlugin({}),
     new MiniCssExtractPlugin({
       filename: "css/[name].[contenthash].css"
-    })
+    }),
+    new webpack.HashedModuleIdsPlugin()
   ]
 };
 

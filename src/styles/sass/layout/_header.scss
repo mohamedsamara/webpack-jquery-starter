@@ -1,4 +1,9 @@
 .header {
+  width: 100%;
+  position: relative;
+  background-color: $white;
+  box-shadow: $header-box-shadow;
+
   .navbar-light {
     .navbar-toggler {
       border: none;

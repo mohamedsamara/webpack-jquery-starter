@@ -10,8 +10,8 @@ const common = require("./webpack.common");
 const config = {
   mode: "development",
   output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "../", "build")
+    path: path.resolve(__dirname, "../", "build"),
+    filename: "[name].js"
   },
   devtool: "eval-cheap-module-source-map",
   module: {
@@ -76,7 +76,6 @@ const config = {
   devServer: {
     historyApiFallback: true,
     disableHostCheck: false,
-    contentBase: path.resolve(__dirname, "../", "build"),
     inline: true,
     compress: true,
     hot: true
